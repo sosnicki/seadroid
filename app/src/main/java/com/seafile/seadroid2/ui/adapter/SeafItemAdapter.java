@@ -427,7 +427,7 @@ public class SeafItemAdapter extends BaseAdapter {
             viewHolder.downloadStatusIcon.setImageResource(downloadStatusIcon);
             viewHolder.subtitle.setText(dirent.getSubtitle());
         }
-        if (Utils.isViewableImage(file.getName())) {
+        if (Utils.isViewableImage(file.getName()) || Utils.isVideoFile(file.getName())) {
             String url = dataManager.getImageThumbnailLink(repoName, repoID, filePath, getThumbnailWidth());
             if (url == null) {
                 viewHolder.icon.setImageResource(dirent.getIcon());
